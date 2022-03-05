@@ -1,0 +1,39 @@
+div{
+   border: 1px solid red;
+}
+.cell{
+    display: flex;
+  
+    background-color: wheat;
+}
+.cell:hover{
+   
+}
+.active{
+    background-color: black;
+}
+.inactive{
+    background-color: white;
+}
+.row{
+
+    
+    
+    gap: 20px;
+}
+.col{
+  
+    
+}
+.squareGrid{
+    width: 600px;
+    height: 600px;
+    display:grid;
+    grid-template-columns: repeat(16, 1fr);
+    grid-template-rows: repeat(16, 1fr);
+    column-gap: 0px;
+    overflow: hidden;
+   
+    border: 1px solid black;
+
+}
