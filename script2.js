@@ -14,7 +14,7 @@ function makeGrid(size){
     const tempSize = gridSize(size);
     //loop to make 16x16 grid of square divs (256)
     for(i = 1; i<=tempSize; i++){
-        console.log("test")
+        console.log("First grid")
         const newDiv = document.createElement('div');
         newDiv.classList.add(`col${i}`)
         newDiv.classList.add(`cell`)
@@ -54,6 +54,16 @@ function hover(){
     object.addEventListener("mouseover", myScript);
 }
 
+function clearGrid(){
+
+   const cells = document.querySelectorAll('.cell');
+   for(i = 0; i < cells.length; i++){
+       cells[i].remove();
+       console.log('clear')
+   }
+}
+
+
 function resetGrid(){
    const size = prompt(['What sized grid for you now me lord? Must be less than 100 '] , 16);
    if(size > 100){
@@ -65,6 +75,17 @@ function resetGrid(){
    document.querySelector('.squareGrid').style.gridTemplateColumns = `repeat(${intSize}, auto)`;
    document.querySelector('.squareGrid').style.gridTemplateRows = `repeat(${intSize}, auto`;
    
+   const cells = document.querySelectorAll('.cell');
+   for(i = 0; i < cells.length; i++){
+       cells[i].remove();
+       console.log('clear')
+   }
+
+//clearing old divs from container
+
+
+
+
     //loop to make 16x16 grid of square divs (256)
     for(i = 1; i<=gridSize; i++){
         console.log("reset")
@@ -76,17 +97,17 @@ function resetGrid(){
             event.target.style.backgroundColor = "orange";
         })
       
+
        document.querySelector('.squareGrid').appendChild(newDiv)  
     }   
-       
+       for(i = 0; i < cells.length; i++){
+       cells[i].style.backgroundColor = "wheat";
+   }
 
      
 
 
-const cells = document.querySelectorAll('.cell');
-for(i = 0; i < cells.length; i++){
-    cells[i].style.backgroundColor = "wheat";
-}
+
 }
 
 makeGrid(16);
